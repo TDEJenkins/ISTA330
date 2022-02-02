@@ -12,6 +12,21 @@ output: 3
 */
 
 var minimalReduction = function(n) {
-
+     let countways = 0;
+    while (n != 0) {
+        if (n % 3 === 0) {
+            n /= 3;
+            countways++;
+        }
+        if (n % 4 === 0) {
+            n /= 4;
+            countways++;
+        } 
+        else {
+            n -= 1;
+            countways++;
+        }
+    }
+    return countways;
 };
 
