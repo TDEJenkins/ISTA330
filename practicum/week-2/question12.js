@@ -42,5 +42,30 @@ for (let partition of allPartitions("aba")) {
 }
 
 var maxBalanceNumber = function(input) {
-
+  let maxBalanceCount = 0;
+  let balancedCount = 0;
+  let aCount = 0;
+  let bCount = 0;
+  for (let partition of allPartitions(input)) {
+    balancedCount = 0;
+    for (let substr of partition) { 
+      aCount = 0;
+      bCount = 0;
+      for (let char of substr) { 
+        if (char === 'a') {
+          aCount++;
+        }
+        if (char === 'b') {
+          bCount++;
+        }
+      }
+      if (aCount === bCount) {
+        balancedCount++;
+      }
+    }
+    if (balancedCount > maxBalanceCount) {
+      maxBalanceCount = balancedCount;
+    }
+  }
+  return maxBalanceCount;
 };

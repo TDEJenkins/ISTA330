@@ -10,5 +10,18 @@ output: [5, 5, 2, 2, 2, 2]
 */
 
 var decode = function(input) {
-
+    let decode = [];
+    let quantity = 0;
+    for (let i = 0; i < input.length; i++) {
+        if (i % 2 === 0) {
+            quantity = input[i];
+        }
+        else {
+            continue; 
+        }
+        for (let j = 0; j < quantity; j++) {
+            decode.push(input[i+1]);
+        }
+    }
+    return decode;
 };
