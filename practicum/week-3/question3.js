@@ -13,5 +13,17 @@ output: [
 */
 
 var PascalTriangle = function(n) {
-
+    if(n.length == 0) {return [[]];}
+    if(n.length == 1) {return [[1]];}
+    if(n.length == 2) {return [[1,1]];}
+    triangle = [[1],[1,1]];
+    for (let i=2; i<n; i++){
+      let buttom = triangle[triangle.length-1];
+      let nextLevel = [1,1];
+      for (let i=1; i<buttom.length; i++){
+        nextLevel.splice(i, 0, buttom[i-1]+buttom[i]);
+      }
+    triangle.push(nextLevel);
+    }
+    return triangle;
 };

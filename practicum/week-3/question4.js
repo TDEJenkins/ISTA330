@@ -13,5 +13,10 @@ Example:
 */
 
 var hasDuplicates = function(input) {
-
+     let set = new Set();
+     for (let val of input){
+          if (!set.has(val)){set.add(val);}
+          else return true;
+     }
+     return false;
 };

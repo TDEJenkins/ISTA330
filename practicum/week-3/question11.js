@@ -14,5 +14,16 @@ output: 1
 */
 
 var d_count = function(input1, input2, d) {
-
+     let count = 0;
+     for (let e1 of input1){
+          let find = false
+          for (let e2 of input2){
+               if (Math.abs(e1-e2) <= d){
+                    find = true;
+                    break;
+               }
+          }
+          if (!find){count ++;}
+     }
+     return count;
 };

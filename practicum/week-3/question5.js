@@ -17,7 +17,29 @@ output: true
 */
 
 var isMonotonic = function(input) {
-
+     var monotonic = 1;
+     for (var i = 0; i < input.length; i++) {
+          for (var j = i; j < input.length; j++) {
+               if (!(i <= j && input[i] <= input[j])) {
+                    monotonic = 0;
+               }
+          }
+     }
+     if (monotonic == 1) {
+          return true;
+    }
+     monotonic = 1;
+     for (var i = 0; i < input.length; i++) {
+          for (var j = i; j < input.length; j++) {
+               if (!(i <= j && input[i] >= input[j])) {
+                    monotonic = 0;
+               }
+          }
+     }
+     if (monotonic == 1) {
+          return true;
+    }
+     return false;
 };
 
 console.log('hi');
